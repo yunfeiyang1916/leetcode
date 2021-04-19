@@ -8,7 +8,7 @@ func main() {
 	// 大鱼吃小鱼
 	// FishTest()
 	// 找出数组中右边比我小的元素
-	// FindRightSmallTest()
+	FindRightSmallTest()
 	// 下一个更大元素
 	// NextGreaterElementTest()
 	// 在循环数组中查找下一个更大的元素
@@ -18,7 +18,9 @@ func main() {
 	// 求柱状图中最大的矩形测试
 	// LargestRectangleAreaTest()
 	// 内存逃逸测试
-	escapeTest()
+	// escapeTest()
+	// 最小栈
+	// MinStackTest()
 }
 
 // 分析内存逃逸

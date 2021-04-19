@@ -8,5 +8,7 @@ type ListNode struct {
 
 func main() {
 	// MyLinkedListTest()
-	ReverseBetweenTest()
+	// ReverseBetweenTest()
+	// 合并有序链表
+	MergeTwoListsTest()
 }

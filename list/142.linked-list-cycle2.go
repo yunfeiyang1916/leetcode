@@ -12,7 +12,7 @@ func detectCycle(head *ListNode) *ListNode {
 		slow = slow.Next
 		// 相遇了说明是环形链表
 		if fast == slow {
-			// 继续从头遍历，当index与slow相遇时，则相遇出即为环形入口
+			// 继续从头遍历，当index与slow相遇时，则相遇处即为环形入口
 			index := head
 			for index != slow {
 				index = index.Next
