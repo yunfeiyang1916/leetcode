@@ -35,13 +35,23 @@ func (p PriorityQueue) Len() int {
 	return n
 }
 
-// Less reports whether the element with
-// index i should sort before the element with index j.
+// 比较，(如果值类型为字符串的话)支持优先级相等时按值排序
 func (p PriorityQueue) Less(i, j int) bool {
+	left := p.Data[i]
+	right := p.Data[j]
 	if p.IsLarge {
-		return p.Data[i].Priority > p.Data[j].Priority
+		// return p.Data[i].Priority > p.Data[j].Priority
+		// 优先级相等时需要支持值排序
+		//if left.Priority == right.Priority {
+		//	return left.Value.(string) > right.Value.(string)
+		//}
+		return left.Priority > right.Priority
 	}
-	return p.Data[i].Priority < p.Data[j].Priority
+	// return p.Data[i].Priority < p.Data[j].Priority
+	//if left.Priority == right.Priority {
+	//	return left.Value.(string) > right.Value.(string)
+	//}
+	return left.Priority < right.Priority
 }
 
 // Swap swaps the elements with indexes i and j.
