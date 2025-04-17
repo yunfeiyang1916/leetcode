@@ -22,6 +22,7 @@ func traversal(root *TreeNode, path string) []string {
 		return result
 	}
 	if root.Left != nil {
+		// 每次函数调用完，path依然是没有加上"->" 的，这就是回溯了
 		result = append(result, traversal(root.Left, path+"->")...)
 	}
 	if root.Right != nil {

@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 // 搜索插入位置
 func SearchInsertTest() {

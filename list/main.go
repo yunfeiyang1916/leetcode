@@ -10,5 +10,6 @@ func main() {
 	// MyLinkedListTest()
 	// ReverseBetweenTest()
 	// 合并有序链表
-	MergeTwoListsTest()
+	// MergeTwoListsTest()
+	partitionTest()
 }

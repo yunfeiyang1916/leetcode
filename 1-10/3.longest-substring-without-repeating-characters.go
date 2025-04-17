@@ -11,30 +11,29 @@ func LengthOfLongestSubstring() {
 
 // 无重复字符的最长子串算法
 // @remark 时间复杂度：O(N)，其中 N 是字符串的长度。左指针和右指针分别会遍历整个字符串一次。
-// 		   空间复杂度：O(∣Σ∣)
+//
+//	空间复杂度：O(N)
 func lengthOfLongestSubstring(s string) int {
 	var (
-		// 记录每个字符是否出现过
-		m     = make(map[byte]int)
-		count = len(s)
-		// 右指针，初始值为-1，相当于我们在字符串的左边界的左侧，还没有开始移动
-		rk = -1
-		// 结果
-		ans = 0
+		window      = make(map[byte]int)
+		left, right int
+		res         int
 	)
-	for i := 0; i < count; i++ {
-		if i != 0 {
-			// 向右移动1格
-			delete(m, s[i-1])
+	for right < len(s) {
+		c := s[right]
+		window[c]++
+		right++
+		// 判断左侧窗口是否需要收缩
+		for window[c] > 1 {
+			d := s[left]
+			window[d]--
+			left++
 		}
-		for rk+1 < count && m[s[rk+1]] == 0 {
-			m[s[rk+1]]++
-			rk++
+		if res < right-left {
+			res = right - left
 		}
-		// 第 i 到 rk 个字符就是一个无重复字符子串
-		ans = Max(ans, rk+1-i)
 	}
-	return ans
+	return res
 }
 
 // 返回最大值

@@ -14,7 +14,9 @@ func main() {
 	// 最大子序和
 	// MaxSubArray()
 	// 零钱兑换
-	CoinChange()
+	//CoinChange()
+
+	UniquePathsWithObstaclesTest()
 }
 
 // 最小值

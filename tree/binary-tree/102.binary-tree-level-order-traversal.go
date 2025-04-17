@@ -45,22 +45,3 @@ func levelOrder(root *TreeNode) [][]int {
 	}
 	return result
 }
-
-// 给定一个二叉树，返回其结点值自底向上的层次遍历
-func levelOrderBottom(root *TreeNode) [][]int {
-	// 先从上到下层序访问，再反转即可
-	result := levelOrder(root)
-	reverse2(result)
-	return result
-}
-
-// 翻转二维数组
-func reverse2(nums [][]int) {
-	n := len(nums)
-	if n == 0 {
-		return
-	}
-	for i := 0; i < n/2; i++ {
-		nums[i], nums[n-1-i] = nums[n-1-i], nums[i]
-	}
-}
